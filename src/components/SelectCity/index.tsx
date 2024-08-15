@@ -4,7 +4,12 @@ import { useEffect, useState } from 'react';
 import { Input } from '../Input';
 import { getCityByNameService, CityProps } from '../../services/getCityByNameService';
 
-export function SelectCity({ onSelect }) {
+interface Props {
+  onSelect: (item: CityProps) => void;
+  example: string;
+};
+
+export function SelectCity({ onSelect, example }: Props) {
   const [city, setCity] = useState<CityProps[]>([]);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
