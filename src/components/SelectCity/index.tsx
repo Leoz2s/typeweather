@@ -6,10 +6,9 @@ import { getCityByNameService, CityProps } from '../../services/getCityByNameSer
 
 interface Props {
   onSelect: (item: CityProps) => void;
-  example: string;
 };
 
-export function SelectCity({ onSelect, example }: Props) {
+export function SelectCity({ onSelect }: Props) {
   const [city, setCity] = useState<CityProps[]>([]);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
